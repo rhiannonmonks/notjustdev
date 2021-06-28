@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Button from '../components/Button';
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
 
   <main className={styles.main}>
         {/* Hero */}
-  <div  className="flex flex-col md:flex-row p-5 max-w-screen-xl">
+  <div  className="flex flex-col md:flex-row p-5 max-w-screen-xl items-center">
          {/* Taglines */}
     <div className="flex-1 mb-5">
       <p className="text-xs text-secondary font-mono">Development | Code | Entrepreneurship</p>
@@ -23,8 +24,7 @@ export default function Home() {
     {/* button */ }
     </div >
     { /* Video */ }
-        <div className="flex-1 justify-center items-center mr-8">
-            <div className="flex-1 relative">
+        <div className="flex-1 relative justify-center items-center pr-9 mb-10 w-full">
               <Image
                 src="/images/video_img.png" // Route of the image file
                 height={144} // Desired size with correct aspect ratio
@@ -40,10 +40,13 @@ export default function Home() {
                 alt="profile image"
                 layout="responsive"
               />
-            </div>
           </div>
         </div>
+        <div>
+        <Button href="" text="Sign up"/>
+        </div>
       </div>
+      
       </main>
 
       <footer className={styles.footer}>
