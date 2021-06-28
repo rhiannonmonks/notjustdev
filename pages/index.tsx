@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Button from '../components/button';
+import Button from '../components/Button';
+import BlogCard from '../components/BlogCard';
 
 const techLogos = [
   '/images/tech_logos/amplify.svg',
@@ -12,7 +13,24 @@ const techLogos = [
   '/images/tech_logos/nodejs.svg',
   '/images/tech_logos/react.svg',
   '/images/tech_logos/typescript.svg',
-]
+];
+
+const BlogPosts = [
+  {
+    id: '1',
+    title: 'The Importance of Learning CSS',
+    slug: 'the_importance_of_learning_css',
+    image: 'https://cdn.pixabay.com/photo/2016/04/04/14/12/monitor-1307227_1280.jpg',
+    excerpt: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. '
+  },
+  {
+    id: '2',
+    title: 'The Importance of Learning CSS 2',
+    slug: 'the_importance_of_learning_css_2',
+    image: 'https://cdn.pixabay.com/photo/2016/04/04/14/12/monitor-1307227_1280.jpg',
+    excerpt: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. '
+  }
+] 
 
 export default function Home() {
   return (
@@ -23,9 +41,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-  <main className="p-5 max-w-screen-xl">
+  <main className="p-5 max-w-screen-xl grid gap-12">
         {/* Hero */}
-      <div  className="flex flex-col md:flex-row items-center my-10">
+      <section  className="flex flex-col md:flex-row items-center">
          {/* Taglines */}
         <div className="flex-1 mb-5">
           <p className="text-xs text-secondary font-mono">Development | Code | Entrepreneurship</p>
@@ -54,11 +72,11 @@ export default function Home() {
           </div>
       {/* button */ }
           <div>
-            <Button href="" text="Sign up"/>
+            <Button href="" text="Sign up" type="secondary" />
           </div>
-        </div>
+        </section>
       {/* TechStack */ }
-      <div className="flex flex-row flex-wrap justify-center my-10">
+      <section className="flex flex-row flex-wrap justify-center">
         {techLogos.map(logo => (
           <div className="relative w-10 h-12 m-3">
               <Image
@@ -69,7 +87,13 @@ export default function Home() {
             />
           </div>
           ))}
-      </div>
+      </section>
+      {/* Blog */}
+      <section className="flex flex-col items-center">
+        <h1 className="text-2xl">Blog</h1>
+        <p className="text-xs text-gray-500 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+      {BlogPosts.map(post => <BlogCard post={post}/>)} 
+      </section>
   </main>
 
 
