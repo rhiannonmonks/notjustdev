@@ -24,7 +24,7 @@ function BlogCard( { post } : BlogCardProps) {
     </div>
       <h1 className="text-lg my-3">{post.title}</h1>
       <p className="text-cen5er text-sm text-light text-gray-400 mb-3">{post.excerpt}</p>
-      <Button text="read-more" href={`/posts/${post.slug}`} type={"tertiary"} />
+      <Button text="Read more" href={`/posts/${post.slug}`} type={"tertiary"} />
     </div>
   )
 }

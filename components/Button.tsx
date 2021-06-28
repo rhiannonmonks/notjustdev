@@ -21,7 +21,9 @@ function Button({text, href, type='primary'}: ButtonProps ) {
   
   return (
     <Link href={href}>
-      <a className="bg-primary block py-2 px-7 rounded text-gray-900 font-medium">{text}</a>
+      <a className={`${aClassNames} block py-2 px-7 rounded font-medium`}>
+      {text}
+      </a>
     </Link>
   )
 }

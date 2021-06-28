@@ -72,7 +72,7 @@ export default function Home() {
           </div>
       {/* button */ }
           <div>
-            <Button href="" text="Sign up" type="secondary" />
+            <Button href="" text="Sign up" type="primary" />
           </div>
         </section>
       {/* TechStack */ }
@@ -93,6 +93,8 @@ export default function Home() {
         <h1 className="text-2xl">Blog</h1>
         <p className="text-xs text-gray-500 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
       {BlogPosts.map(post => <BlogCard post={post}/>)} 
+      
+      <Button text="See all posts" href="/blog" type='secondary' />
       </section>
   </main>
 
